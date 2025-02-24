@@ -1,1 +1,28 @@
-/*  your css code here. If applicable */
+import React from "react";
+
+const animals = [
+  { name: "camel", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/camel.jpg" },
+  { name: "cheetah", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/cheetah.jpg" },
+  { name: "elephant", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/elephant.jpg" },
+  { name: "gorilla", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/gorilla.jpg" },
+  { name: "koala", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/koala.jpg" },
+  { name: "lion", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/lion.jpg" },
+  { name: "polar bear", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/polar_bear.jpg" },
+  { name: "tiger", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/tiger.jpg" },
+  { name: "wolf", url: "https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project_1folder/cssProject1/wolf.jpg" }
+];
+
+const AnimalPhotoGallery = () => {
+  return (
+    <div id="animal-photos" style={{ textAlign: "center" }}>
+      <h1 id="photo-heading">Animal Photos</h1>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px", justifyContent: "center", padding: "20px" }}>
+        {animals.map((animal, index) => (
+          <img key={index} src={animal.url} alt={animal.name} style={{ width: "100%", maxWidth: "300px", height: "auto", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0,0,0,0.2)" }} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AnimalPhotoGallery;
